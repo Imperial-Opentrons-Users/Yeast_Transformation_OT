@@ -51,3 +51,17 @@ Follow the link to watch a detailed demonstration of how to download and impleme
 
 https://www.youtube.com/watch?v=-7qC8O_KkY4&fbclid=IwAR1L49QSFspqv5ncrnHhUJSvyippbG5xk71tXlP7UXx7C4ILsos51kv6wh0
 
+Opentrons set up
+-------------------
+
+![Save GitHub folder on to your computer](https://i.postimg.cc/pdj3q73J/pasted-image-0.png)
+
+Please set up your Opentrons as shown in the image above. 
+
+The reervoir should contain:
+- A2 --> Lithium acetate and single stranded DNA
+- A4 --> PEG
+- A6 --> Calcium chloride
+- A8 --> Yeast cells at appropriate OD
+- A9 --> Water
+- A12 --> Waste well
