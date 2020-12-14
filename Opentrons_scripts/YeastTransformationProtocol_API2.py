@@ -304,6 +304,6 @@ with open(filename, "w") as new_file:                 # Writes out chosen parame
             new_file.write(line)
     
     new_file.write("\n")     
-    new_file.write("for line in protocol.commands():\n")   # The customised file is ready to be used on the Opentrons app
+    new_file.write("for line in protocol.commands():\n")   # The customised file in Opentrons_scripts folder is ready to be used on the Opentrons app
     new_file.write("    print(line)\n")  
 
