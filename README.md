@@ -74,7 +74,7 @@ Automated protocol
 1) Adds lithium acetate and single-stranded DNA to all wells of 96 well plate on cold block
 2) PEG is added to all wells
 3) DNA mini-preps will be added to specific wells
-4) Yeast are added and mixed thoroughly
+4) Yeast cells are added and mixed thoroughly
 5) User must move 96 well plate onto hot block 
 6) Cells undergo heat shock
 7) Opentron transfers cells to clean 96 well plate 
