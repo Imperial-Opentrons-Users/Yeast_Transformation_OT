@@ -61,7 +61,7 @@ Opentrons set up
 Please set up your Opentrons as shown in the image above. Place a 96 well plate onto the cold block.
 
 The reservoir wells should contain:
-- A2 &#8594; Lithium acetate and single-stranded DNA
+- A2 &#8594; Lithium acetate and salmon sperm DNA
 - A4 &#8594; PEG
 - A6 &#8594; Calcium chloride
 - A8 &#8594; Yeast cells at appropriate OD
@@ -71,7 +71,7 @@ The reservoir wells should contain:
 Automated protocol
 -------------------
 
-1) Adds lithium acetate and single-stranded DNA to all wells of 96 well plate on cold block
+1) Adds lithium acetate and salmon sperm DNA to all wells of 96 well plate on cold block
 2) PEG is added to all wells
 3) DNA mini-preps will be added to specific wells
 4) Yeast cells are added and mixed thoroughly
