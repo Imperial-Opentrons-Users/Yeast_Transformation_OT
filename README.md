@@ -1,4 +1,4 @@
-#High throughput yeast transformation protocol for Opentrons 2.
+# High throughput yeast transformation protocol for Opentrons 2.
 
 Reagents (volumes for transforming one sample):
 - 1M Lithium acetate (18 µl)
