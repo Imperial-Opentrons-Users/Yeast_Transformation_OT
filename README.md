@@ -99,7 +99,17 @@ Automated protocol
 10) Cells are mixed with 200 µl calcium chloride
 11) Plate can be removed for incubation and plating
 
-| Attempt | #1 | #2 |
-| :---: | :---: | :---: |
-| Seconds | 301 | 283 |
+| Reagents  | Equipment |
+| ------------- | ------------- |
+| 1M Lithium acetate (18 µl) | 2x 96 well plates  |
+| 10mg/ml Salmon sperm DNA (5 µl)  | 2x temperature modules (GEN 2)  |
+| 50% PEG-3350 (120 µl)  | 4x 24 eppendorf rack  |
+| DNA mini-prep  | 12 well reservoir  |
+| Yeast cells at appropriate OD (32 µl)  | p300 multi pipette (GEN 2) |
+| 5mM Calcium chloride (200 µl)  | 2x 300 µl tiprack  |
+|   | p20 single pipette (GEN 2)  |
+|   | 20 µl tiprack  |
+
+
+
 
