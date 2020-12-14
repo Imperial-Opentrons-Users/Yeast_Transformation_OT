@@ -110,7 +110,7 @@ def LiOAc_ssDNA_transfer(column):
 # PEG transfer 
 def PEG_transfer(column):   
     p300multi.pick_up_tip(tiprack_1['A2'])                                
-    p300multi.flow_rate.aspirate=40
+    p300multi.flow_rate.aspirate=40                   # Reduced speed as PEG is viscous
     p300multi.flow_rate.dispense=40
     p300multi.transfer(120,
                          PEG,
@@ -171,7 +171,7 @@ def DNA_transfer(DNAvolume, H2Ovolume, well):
         
 ########################## Yeast addition
 def yeast_DNA(column):
-    p300multi.flow_rate.aspirate=50           
+    p300multi.flow_rate.aspirate=50                 # Reduced speed to account for sensitivity of living cells
     p300multi.flow_rate.dispense=50      
     for i in range(column):
         p300multi.pick_up_tip(tiprack_2.columns()[i][0])
@@ -184,7 +184,7 @@ def yeast_DNA(column):
                            blowout_location='destination well',
                            mix_after=(3,100),               
                            new_tip='never')    
-        p300multi.return_tip()             
+        p300multi.drop_tip()             
 
 ########################## Trasfer content from original plate to new plate
 def transfer_to_new(column):
@@ -249,16 +249,16 @@ yeast_DNA(multichannel_column_number)
 temp_mod_2.status
 temp_mod_2.temperature
 
-protocol.pause('Move plate from cold block on 3 to heat block on 9 for 40 minute heat shock')
+protocol.pause('Move plate from cold block on 3 to heat block on 9 for 40 minute heat shock')  # User must confirm to continue protocol
 protocol.delay(minutes = time_block)
 
-temp_mod_2.deactivate() 
+temp_mod_2.deactivate()    # Automatically deactivates after heat shock and protocol continues
 
 # 6
 transfer_to_new(multichannel_column_number)
 
 # 7
-protocol.pause('Centrifuge plate at 2000 rmp for 10 minutes and return to deck position 5')
+protocol.pause('Centrifuge plate at 2000 rmp for 10 minutes and return to deck position 5')  # User must confirm to continue protocol
 
 # 8
 supernatant(multichannel_column_number)
@@ -275,12 +275,12 @@ filename = str(input("Please enter the name for your new script: "))
 
 ## Checks file will be .py file
 substring = ".py"
-if substring in filename:   ## if filename ends with .py all is good
+if substring in filename:   
     pass
-else:           ## If not, will add it automatically
+else:           
     filename = filename + ".py"
 
-with open(filename, "w") as new_file:
+with open(filename, "w") as new_file:                 # Writes out chosen parameters in new file as comments and defines variables
     new_file.write("#Opentrons protocol\n")
     new_file.write("\n")
     new_file.write("### DNA volumes a is set to: " + str(DNA_vol) + "\n")
@@ -298,12 +298,12 @@ with open(filename, "w") as new_file:
     new_file.write("time_block = " + str(time_block) + "\n")
     new_file.write("\n")
     
-    with open("YeastTransformationProtocol_API2.py") as f:
+    with open("YeastTransformationProtocol_API2.py") as f:    # Copies protocol into new file 
         for num, line in enumerate(f, 1):
           if num >= 47 and num <= 272:
             new_file.write(line)
     
     new_file.write("\n")     
-    new_file.write("for line in protocol.commands():\n")
+    new_file.write("for line in protocol.commands():\n")   # The customised file is ready to be used on the Opentrons app
     new_file.write("    print(line)\n")  
 
