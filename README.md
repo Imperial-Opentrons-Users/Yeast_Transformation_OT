@@ -6,6 +6,7 @@ Requires:
 - Single-stranded DNA
 - PEG
 - DNA mini-prep
+- Yeast cells at appropriate OD
 - Calcium chloride
 
 Download the folder from GitHub
