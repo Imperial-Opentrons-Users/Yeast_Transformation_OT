@@ -34,7 +34,7 @@ Open terminal or command line and change the directory (‘cd’):
  
 Run the script using python by typing the following:
 
-	$ python YeastTransformationProtocol_API2.py
+	$ python YeastTransformationProtocol_AP12.py
 	
 
 Prompts will appear, as shown below. Enter the specific values for your experiment.
