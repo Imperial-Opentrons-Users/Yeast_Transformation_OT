@@ -32,9 +32,14 @@ Open terminal or command line and change the directory (‘cd’):
 
 	$ cd YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts 
  
-Run the script using python by typing the following:
+Run the script using python by typing the following for MacOS:
 
-	$ python YeastTransformationProtocol_AP12.py
+	$ python YeastTransformationProtocol_API2.py
+	
+Or Windows:
+  
+	$ python YeastTransformationProtocol_API2
+
 	
 
 Prompts will appear, as shown below. Enter the specific values for your experiment.
