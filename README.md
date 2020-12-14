@@ -9,12 +9,12 @@ Reagents (volumes for transforming one sample):
 - 5mM Calcium chloride (200 µl)
 
 Opentrons equipment:
-- 2 96 well plates
-- 2 temperature modules (GEN 2)
-- 4 24 eppendorf rack
+- 2x 96 well plates
+- 2x temperature modules (GEN 2)
+- 4x 24 eppendorf rack
 - 12 well reservoir
 - p300 multi pipette (GEN 2)
-- 2 96 300 µl tiprack
+- 2x 96 300 µl tiprack
 - p20 single pipette (GEN 2)
 - 96 20 µl tiprack
 
