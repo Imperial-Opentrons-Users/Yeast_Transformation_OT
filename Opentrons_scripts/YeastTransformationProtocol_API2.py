@@ -9,7 +9,7 @@ H2O_vol = 10 - DNA_vol
 # user input
 transformants = int(input("Please enter the number of transformants that will be produced (max 96): "))
 
-#change
+#Assigning how many columns will be needed for the experiment
 if transformants <= 8:
     multichannel_column_number = 1
 elif transformants <= 16:
