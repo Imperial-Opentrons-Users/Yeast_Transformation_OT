@@ -43,7 +43,7 @@ temp_block = int(input("Please enter the temperature for heat shock (recommend 4
 time_block = int(input("Please enter the time for heat shock (recommend 40) (mins): "))
 
 
-##############################################################
+########################### OUTPUT FILE STARTS HERE ###################################
 
 from opentrons import simulate
 metadata = {'apiLevel': '2.8'}
