@@ -60,7 +60,7 @@ Opentrons set up
 
 Please set up your Opentrons as shown in the image above. Place a 96 well plate onto the cold block.
 
-The reservoir should contain:
+The reservoir wells should contain:
 - A2 &#8594; Lithium acetate and single-stranded DNA
 - A4 &#8594; PEG
 - A6 &#8594; Calcium chloride
