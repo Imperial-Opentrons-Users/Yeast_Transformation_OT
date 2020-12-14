@@ -2,12 +2,12 @@
 High throughput yeast transformation protocol for Opentrons 2.
 
 Requires:
-- Lithium acetate
-- Single-stranded DNA
-- PEG
+- 1M Lithium acetate
+- Salmon sperm DNA (10mg/ml)
+- 50% PEG-3350
 - DNA mini-prep
 - Yeast cells at appropriate OD
-- Calcium chloride
+- 5mM Calcium chloride 
 
 Download the folder from GitHub
 -------------------
