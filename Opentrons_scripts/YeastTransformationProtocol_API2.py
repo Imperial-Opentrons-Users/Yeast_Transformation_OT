@@ -1,15 +1,18 @@
+# Opentrons script for yeast transformation protocol changes
+
+### User-input variables
 ## DNA:water ratio
-# user input
+# User input
 DNA_vol = int(input("Please enter the plasmid DNA volume per transformation (max 10 µL) (µL): "))
 
-#This should change accordingly with the DNA volume 
+# H20 changes accordingly with the DNA volume 
 H2O_vol = 10 - DNA_vol
 
-## Changes to number of columns
-# user input
+## Changes to number of columns for p300multi
+# User input
 transformants = int(input("Please enter the number of transformants that will be produced (max 96): "))
 
-#Assigning how many columns will be needed for the experiment
+# Column assignment for transformant number
 if transformants <= 8:
     multichannel_column_number = 1
 elif transformants <= 16:
@@ -35,16 +38,15 @@ elif transformants <= 88:
 elif transformants <= 96:
         multichannel_column_number = 12
         
-## temperatrue 
-# user input : temperature 
+## Heat shock changes 
+# User input : temperature 
 temp_block = int(input("Please enter the temperature for heat shock (recommend 45): "))
 
-# user input : time on the heat block 
+# User input : time on the heat block 
 time_block = int(input("Please enter the time for heat shock (recommend 40) (mins): "))
 
-
 ########################### OUTPUT FILE STARTS HERE ###################################
-
+### Set-up
 from opentrons import simulate
 metadata = {'apiLevel': '2.8'}
 protocol = simulate.get_protocol_api('2.8')
@@ -94,23 +96,22 @@ p20single = protocol.load_instrument('p20_single_gen2',
 
 protocol.max_speeds['Z'] = 10
 
-## Functions
-
-####################### Transformation mixture preperation
+### Functions
+## Transformation mixture preperation
 # LiOAc and ssDNA transfer
 def LiOAc_ssDNA_transfer(column):
-  p300multi.distribute(23,
+  p300multi.distribute(23,                             # Distribute function used to rapidly transfer to all wells with one aspiration
                     LiOAc_ssDNA, 
                     plate_OG.columns()[:column], 
                     touch_tip=True,
                     mix_before=(5,200),                # Mix the ssDNA and LiOAc in reservoir
-                    disposal_volume=24,
+                    disposal_volume=24,                # Maximum disposal volume used for tip to offset any inaccuracy caused by the distribute function
                     trash=True)
 
 # PEG transfer 
 def PEG_transfer(column):   
     p300multi.pick_up_tip(tiprack_1['A2'])                                
-    p300multi.flow_rate.aspirate=40                   # Reduced speed as PEG is viscous
+    p300multi.flow_rate.aspirate=40                    # Reduced speed as PEG is viscous
     p300multi.flow_rate.dispense=40
     p300multi.transfer(120,
                          PEG,
@@ -122,11 +123,10 @@ def PEG_transfer(column):
                          new_tip='never')
     p300multi.drop_tip()                    
 
-########################## Plasmid DNA and comments to display the eppendorf well locations 
-# Transfers water and DNA from eppendorfs to the plate (have to use block command for more control)
+## Plasmid DNA and water transfer to 96 well plate (with robot comments linking the position of each eppendorf to each well in the plate)
 def DNA_transfer(DNAvolume, H2Ovolume, well):        
     for i in range(well):
-        plate_position = str(plate_OG.wells()[i])
+        plate_position = str(plate_OG.wells()[i])     #(have to use block command for more control)
         plate_well = plate_position.split()[0]
         
         p20single.pick_up_tip()
@@ -169,7 +169,7 @@ def DNA_transfer(DNAvolume, H2Ovolume, well):
         output = f"The eppenddorf in {eppendorf_well} of {eppendorf_rack} is in well {plate_well} of the 96 well plate"
         protocol.comment(output)
         
-########################## Yeast addition
+## Yeast addition
 def yeast_DNA(column):
     p300multi.flow_rate.aspirate=50                 # Reduced speed to account for sensitivity of living cells
     p300multi.flow_rate.dispense=50      
@@ -186,7 +186,7 @@ def yeast_DNA(column):
                            new_tip='never')    
         p300multi.drop_tip()             
 
-########################## Trasfer content from original plate to new plate
+## Trasfer content from original plate to new plate
 def transfer_to_new(column):
     plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 9)   # Updates position of original plate (it is now on the tempaterature block)
     for i in range(column):
@@ -201,7 +201,7 @@ def transfer_to_new(column):
                             new_tip='never')                                   
         p300multi.return_tip()                                       # Returns tips to tip rack to be reused
 
-########################## Remove supernatant
+## Remove supernatant
 def supernatant(column):
     p300multi.flow_rate.aspirate = 25 #slowed aspiration rate to avoid disturbing the pellet
     p300multi.well_bottom_clearance.aspirate = 3 #this value would need to be optimised to avoid aspirating the pellet
@@ -216,7 +216,7 @@ def supernatant(column):
                            new_tip='never')
         p300multi.return_tip() 
 
-########################## CaCl2 addition
+## CaCl2 addition
 def CaCl_addition(column):
     p300multi.flow_rate.aspirate = 150
     p300multi.flow_rate.dispense = 150
@@ -232,20 +232,20 @@ def CaCl_addition(column):
                            mix_after=(7,100)) #Thorough mixing to resuspend the pellet
         p300multi.drop_tip()
 
-############# PROTOCOL #########################
-# 1 - add lithium acetate and ssDNA mix
+### Protocol
+## 1 - add lithium acetate and ssDNA mix
 LiOAc_ssDNA_transfer(multichannel_column_number)
 
-# 2 - add PEG
+## 2 - add PEG
 PEG_transfer(multichannel_column_number) 
 
-# 3 - transfer the DNA constructs from eppendorf tubes to the plate
+## 3 - transfer the DNA constructs from eppendorf tubes to the plate
 DNA_transfer(DNA_vol, H2O_vol, transformants) 
 
-# 4 - add the yeast cells to the plate
+## 4 - add the yeast cells to the plate
 yeast_DNA(multichannel_column_number)
 
-# 5 - heat shock
+## 5 - heat shock
 temp_mod_2.status
 temp_mod_2.temperature
 
@@ -254,32 +254,33 @@ protocol.delay(minutes = time_block)
 
 temp_mod_2.deactivate()    # Automatically deactivates after heat shock and protocol continues
 
-# 6
+## 6
 transfer_to_new(multichannel_column_number)
 
-# 7
+## 7
 protocol.pause('Centrifuge plate at 2000 rmp for 10 minutes and return to deck position 5')  # User must confirm to continue protocol
 
-# 8
+## 8
 supernatant(multichannel_column_number)
 
-# 9 - add calcium chloride to make cells competent  
+## 9 - add calcium chloride to make cells competent  
 CaCl_addition(multichannel_column_number)
 
 protocol.comment('Protocol complete!')
 
-##############################################
-
-#saving 
+########################### OUTPUT FILE ENDS HERE ###################################
+### New custom script output
+## User input
 filename = str(input("Please enter the name for your new script: ")) 
 
-## Checks file will be .py file
+## .py extension on file
 substring = ".py"
 if substring in filename:   
     pass
 else:           
     filename = filename + ".py"
 
+## File writing 
 with open(filename, "w") as new_file:                 # Writes out chosen parameters in new file as comments and defines variables
     new_file.write("#Opentrons protocol\n")
     new_file.write("\n")
