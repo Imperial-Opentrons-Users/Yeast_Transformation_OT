@@ -1,12 +1,12 @@
 # Yeast Tranformation Protocol
 High throughput yeast transformation protocol for Opentrons 2.
 
-Requires:
-- 1M Lithium acetate
-- Salmon sperm DNA (10mg/ml)
-- 50% PEG-3350
+Reagents (volumes for transforming one sample):
+- 1M Lithium acetate (18 µl)
+- 10mg/ml Salmon sperm DNA (5 µl)
+- 50% PEG-3350 (120 µl)
 - DNA mini-prep
-- Yeast cells at appropriate OD
+- Yeast cells at appropriate OD (32 µl)
 - 5mM Calcium chloride 
 
 Download the folder from GitHub
@@ -67,6 +67,7 @@ The reservoir wells should contain:
 - A8 &#8594; Yeast cells at appropriate OD (3.2 ml)
 - A9 &#8594; Water (20 ml)
 - A12 &#8594; Waste well
+(Can adjust volumes for number of samples you are transforming)
 
 Automated protocol
 -------------------
