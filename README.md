@@ -99,4 +99,7 @@ Automated protocol
 10) Cells are mixed with 200 µl calcium chloride
 11) Plate can be removed for incubation and plating
 
+| Attempt | #1 | #2 |
+| :---: | :---: | :---: |
+| Seconds | 301 | 283 |
 
