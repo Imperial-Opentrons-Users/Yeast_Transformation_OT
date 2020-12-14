@@ -14,9 +14,9 @@ Opentrons equipment:
 - 4x 24 eppendorf rack
 - 12 well reservoir
 - p300 multi pipette (GEN 2)
-- 2x 96 300 µl tiprack
+- 2x 300 µl tiprack
 - p20 single pipette (GEN 2)
-- 96 20 µl tiprack
+- 20 µl tiprack
 
 Download the folder from GitHub
 -------------------
