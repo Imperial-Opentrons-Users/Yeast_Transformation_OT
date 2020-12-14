@@ -56,12 +56,29 @@ Opentrons set up
 
 ![Save GitHub folder on to your computer](https://i.postimg.cc/pdj3q73J/pasted-image-0.png)
 
-Please set up your Opentrons as shown in the image above. 
+Please set up your Opentrons as shown in the image above. Place a 96 well plate onto the cold block.
 
-The reervoir should contain:
-- A2 &#8594; Lithium acetate and single stranded DNA
-- A4 --> PEG
-- A6 --> Calcium chloride
-- A8 --> Yeast cells at appropriate OD
-- A9 --> Water
-- A12 --> Waste well
+The reservoir should contain:
+- A2 &#8594; Lithium acetate and single-stranded DNA
+- A4 &#8594; PEG
+- A6 &#8594; Calcium chloride
+- A8 &#8594; Yeast cells at appropriate OD
+- A9 &#8594; Water
+- A12 &#8594; Waste well
+
+Automated protocol
+-------------------
+
+1) Adds lithium acetate and single-stranded DNA to all wells of 96 well plate on cold block
+2) PEG is added to all wells
+3) DNA mini-preps will be added to specific wells
+4) Yeast are added and mixed thoroughly
+5) User must move 96 well plate onto hot block 
+6) Cells undergo heat shock
+7) Opentron transfers cells to clean 96 well plate 
+8) User centrifuges plate and returns to deck
+9) Supernatant is removed
+10) Cells are mixed with calcium chloride
+11) Plate can be removed for incubation and plating
+
+
