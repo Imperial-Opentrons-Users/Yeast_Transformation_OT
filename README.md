@@ -49,7 +49,7 @@ You can now run this in the Opentrons app!
 Further help
 -------------------
 
-Follow the link to watch a detailed demonstration of how download and implement this code.
+Follow the link to watch a detailed demonstration of how to download and implement this code.
 
 https://www.youtube.com/watch?v=-7qC8O_KkY4&fbclid=IwAR1L49QSFspqv5ncrnHhUJSvyippbG5xk71tXlP7UXx7C4ILsos51kv6wh0
 
