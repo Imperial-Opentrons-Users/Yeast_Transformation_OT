@@ -42,6 +42,8 @@ The new file will be saved in the Opentrons_scripts folder.
 
 You can now run this in the Opentrons app!
 
+Creating a separate file for your experiment helps to protect the original script from user-specific changes. 
+
 Further help
 -------------------
 
