@@ -71,7 +71,7 @@ The reservoir wells should contain:
 Automated protocol
 -------------------
 
-1) Adds lithium acetate and salmon sperm DNA (together 23 /mu l to all wells of 96 well plate on cold block
+1) Adds lithium acetate and salmon sperm DNA (together 23 \mu l) to all wells of 96 well plate on cold block
 2) PEG is added to all wells
 3) DNA mini-preps will be added to specific wells
 4) Yeast cells are added and mixed thoroughly
