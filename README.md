@@ -1,7 +1,7 @@
 # Yeast Transformation Protocol
 
 | Reagents (For one sample)  | Equipment |
-| ------------- | ------------- |
+|:-------------: | :-------------: |
 | 1M Lithium acetate (18 µl) | 2x 96-well plates  |
 | 10mg/ml Salmon sperm DNA (5 µl)  | 2x Temperature modules (GEN 2)  |
 | 50% PEG-3350 (120 µl)  | 4x 24 Eppendorf rack  |
