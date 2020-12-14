@@ -301,7 +301,7 @@ with open(filename, "w") as new_file:                 # Writes out chosen parame
     
     with open("YeastTransformationProtocol_API2.py") as f:    # Copies protocol into new file 
         for num, line in enumerate(f, 1):
-          if num >= 47 and num <= 272:
+          if num >= 49 and num <= 272:
             new_file.write(line)
     
     new_file.write("\n")     
