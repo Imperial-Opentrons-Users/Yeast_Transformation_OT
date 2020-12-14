@@ -1,4 +1,4 @@
-# High throughput yeast transformation protocol for Opentrons 2.
+# Yeast Transformation Protocol
 
 Reagents (volumes for transforming one sample):
 - 1M Lithium acetate (18 µl)
@@ -6,7 +6,7 @@ Reagents (volumes for transforming one sample):
 - 50% PEG-3350 (120 µl)
 - DNA mini-prep
 - Yeast cells at appropriate OD (32 µl)
-- 5mM Calcium chloride 
+- 5mM Calcium chloride (200 µl)
 
 Download the folder from GitHub
 -------------------
@@ -62,7 +62,7 @@ Please set up your Opentrons as shown in the image above. Place a 96 well plate 
 The reservoir wells should contain:
 - A2 &#8594; Lithium acetate (1.8 ml) and salmon sperm DNA (475 µl)
 - A4 &#8594; PEG (11.5 ml)
-- A6 &#8594; Calcium chloride
+- A6 &#8594; Calcium chloride (19.5 ml)
 - A8 &#8594; Yeast cells at appropriate OD (3.2 ml)
 - A9 &#8594; Water (20 ml)
 - A12 &#8594; Waste well
