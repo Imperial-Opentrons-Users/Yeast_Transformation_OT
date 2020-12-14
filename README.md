@@ -59,7 +59,7 @@ Opentrons set up
 Please set up your Opentrons as shown in the image above. 
 
 The reervoir should contain:
-- A2 --> Lithium acetate and single stranded DNA
+- A2 &#8594; Lithium acetate and single stranded DNA
 - A4 --> PEG
 - A6 --> Calcium chloride
 - A8 --> Yeast cells at appropriate OD
