@@ -36,10 +36,10 @@ elif transformants <= 96:
         multichannel_column_number = 12
         
 ## temperatrue 
-# user input : temp
+# user input : temperature 
 temp_block = int(input("Please enter the temperature for heat shock (recommend 45): "))
 
-# user input : heat block time
+# user input : time on the heat block 
 time_block = int(input("Please enter the time for heat shock (recommend 40) (mins): "))
 
 
@@ -96,7 +96,7 @@ protocol.max_speeds['Z'] = 10
 
 ## Functions
 
-#######################Transformation mixture preperation
+####################### Transformation mixture preperation
 # LiOAc and ssDNA transfer
 def LiOAc_ssDNA_transfer(column):
   p300multi.distribute(23,
@@ -122,8 +122,8 @@ def PEG_transfer(column):
                          new_tip='never')
     p300multi.drop_tip()                    
 
-##########################Plasmid DNA and comments to eppendorf well location 
-# Transfers water and DNA from eppendorfs to the plate have to use block command for more control)
+########################## Plasmid DNA and comments to display the eppendorf well locations 
+# Transfers water and DNA from eppendorfs to the plate (have to use block command for more control)
 def DNA_transfer(DNAvolume, H2Ovolume, well):        
     for i in range(well):
         plate_position = str(plate_OG.wells()[i])
@@ -169,7 +169,7 @@ def DNA_transfer(DNAvolume, H2Ovolume, well):
         output = f"The eppenddorf in {eppendorf_well} of {eppendorf_rack} is in well {plate_well} of the 96 well plate"
         protocol.comment(output)
         
-##########################Yeast addition
+########################## Yeast addition
 def yeast_DNA(column):
     p300multi.flow_rate.aspirate=50           
     p300multi.flow_rate.dispense=50      
@@ -186,22 +186,22 @@ def yeast_DNA(column):
                            new_tip='never')    
         p300multi.return_tip()             
 
-##########################Trasfer content from original plate to new plate
+########################## Trasfer content from original plate to new plate
 def transfer_to_new(column):
-    plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 9)   # Updates position of original plate on to tempaterature block
+    plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 9)   # Updates position of original plate (it is now on the tempaterature block)
     for i in range(column):
         p300multi.pick_up_tip(tiprack_2.columns()[i][0])          
-        p300multi.transfer(175,                                      # Transfer contents of original plate to new, sterile plate
+        p300multi.transfer(175,                                      # Transfer contents of original plate to a new, sterile plate
                             plate_OG.columns()[i],              
                             plate_new.columns()[i],                      
                             touch_tip=True,                          # Extra steps ensures minimal loss of cells
                             blow_out=True, 
                             blowout_location='destination well',
-                            mix_after=(3,100),                       # Mixing step to ensure everything is homogenous
+                            mix_after=(3,100),                       # Mixing step to ensure homogeneity 
                             new_tip='never')                                   
         p300multi.return_tip()                                       # Returns tips to tip rack to be reused
 
-##########################Remove supernatant
+########################## Remove supernatant
 def supernatant(column):
     p300multi.flow_rate.aspirate = 25 #slowed aspiration rate to avoid disturbing the pellet
     p300multi.well_bottom_clearance.aspirate = 3 #this value would need to be optimised to avoid aspirating the pellet
@@ -216,7 +216,7 @@ def supernatant(column):
                            new_tip='never')
         p300multi.return_tip() 
 
-##########################CaCl2 addition
+########################## CaCl2 addition
 def CaCl_addition(column):
     p300multi.flow_rate.aspirate = 150
     p300multi.flow_rate.dispense = 150
@@ -233,16 +233,16 @@ def CaCl_addition(column):
         p300multi.drop_tip()
 
 ############# PROTOCOL #########################
-# 1
+# 1 - add lithium acetate and ssDNA mix
 LiOAc_ssDNA_transfer(multichannel_column_number)
 
-# 2
+# 2 - add PEG
 PEG_transfer(multichannel_column_number) 
 
-# 3
+# 3 - transfer the DNA constructs from eppendorf tubes to the plate
 DNA_transfer(DNA_vol, H2O_vol, transformants) 
 
-# 4
+# 4 - add the yeast cells to the plate
 yeast_DNA(multichannel_column_number)
 
 # 5 - heat shock
@@ -263,7 +263,7 @@ protocol.pause('Centrifuge plate at 2000 rmp for 10 minutes and return to deck p
 # 8
 supernatant(multichannel_column_number)
 
-# 9
+# 9 - add calcium chloride to make cells competent  
 CaCl_addition(multichannel_column_number)
 
 protocol.comment('Protocol complete!')
