@@ -4,12 +4,12 @@ To carry out this high-throughput protocol, you will need the following:
 
 | Reagents (Volumes for one sample)  | Opentrons Equipment |
 |:-------------: | :-------------: |
-| 1M Lithium acetate (18 µl) | 2x 96-well plates  |
-| 10mg/ml Salmon sperm DNA (5 µl)  | 2x Temperature modules (GEN 2)  |
+| 1 M Lithium acetate (LiOAc)(18 µl) | 2x 96-well plates  |
+| 10 mg/ml Salmon sperm DNA (SSD)(5 µl)  | 2x Temperature modules (GEN 2)  |
 | 50% PEG-3350 (120 µl)  | 4x 24 Eppendorf rack  |
 | DNA mini-prep  | 12-well Reservoir  |
 | Yeast cells at appropriate OD (32 µl)  | p300 Multi pipette (GEN 2) |
-| 5mM Calcium chloride (200 µl)  | 2x 300 µl Tiprack  |
+| 5 mM Calcium chloride (200 µl)  | 2x 300 µl Tiprack  |
 |   | p20 Single pipette (GEN 2)  |
 |   | 20 µl Tiprack  |
 
