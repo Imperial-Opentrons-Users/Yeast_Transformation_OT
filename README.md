@@ -1,5 +1,7 @@
 # Yeast Transformation Protocol
 
+To carry out this high-throughput protocol, you will need the following:
+
 | Reagents (Volumes for one sample)  | Opentrons Equipment |
 |:-------------: | :-------------: |
 | 1M Lithium acetate (18 µl) | 2x 96-well plates  |
