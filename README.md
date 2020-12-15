@@ -9,7 +9,7 @@ To carry out this high-throughput protocol, you will need the following:
 | 50% PEG-3350 (120 µl)  | 4x 24 Eppendorf rack  |
 | DNA mini-prep  | 12-well Reservoir  |
 | Yeast cells at appropriate OD (32 µl)  | p300 Multi pipette (GEN 2) |
-| 5 mM Calcium chloride (200 µl)  | 2x 300 µl Tiprack  |
+| 5 mM Calcium chloride (CaCl<sub>2</sub>) (200 µl)  | 2x 300 µl Tiprack  |
 |   | p20 Single pipette (GEN 2)  |
 |   | 20 µl Tiprack  |
 
@@ -68,8 +68,8 @@ The reservoir wells should contain:
 
 | Reservoir Well| Reagent | Volume |
 | :-------------: | :-------------: | :-------------: |
-| A2  | Lithium acetate  |  1.8 ml  |
-| A2  | Salmon sperm DNA  |  475 µl  |
+| A2  | LiOAc  |  1.8 ml  |
+| A2  | SSD  |  475 µl  |
 | A4  | 50% PEG-3350 |  11.5 ml  |
 | A6  | Calcium chloride  |   19.5 ml |
 | A8  | Yeast cells  |  3.2 ml  |
@@ -81,7 +81,7 @@ You can adjust these volumes for the number of samples you are transforming.
 Automated protocol
 -------------------
 
-1) Adds lithium acetate (18 µl) and salmon sperm DNA (5 µl) to all wells of 96 well plate on cold block
+1) Adds LiOAc (18 µl) and SSD (5 µl) to all wells of 96 well plate on cold block
 2) 120 µl PEG is added to all wells 
 3) DNA mini-preps will be added to specific wells
 4) 32 µl yeast cells are added and mixed thoroughly
