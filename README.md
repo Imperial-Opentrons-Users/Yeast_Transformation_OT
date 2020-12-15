@@ -80,7 +80,7 @@ The reservoir wells should contain:
 | A9  | Water  |  20 ml  |
 | A12  | Waste  |    |
 
-You can adjust these volumes for number of samples you are transforming)
+You can adjust these volumes for the number of samples you are transforming.
 
 Automated protocol
 -------------------
