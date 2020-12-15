@@ -176,7 +176,7 @@ def DNA_transfer(DNAvolume, H2Ovolume, well):
         
 ## Yeast addition
 def yeast_DNA(column):
-    p300multi.flow_rate.aspirate=50                 # Reduced speed to account for sensitivity of living cells
+    p300multi.flow_rate.aspirate=50                               # Reduced speed to account for sensitivity of living cells
     p300multi.flow_rate.dispense=50      
     for i in range(column):
         p300multi.pick_up_tip(tiprack_2.columns()[i][0])
@@ -196,20 +196,20 @@ def transfer_to_new(column):
     plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 9)   # Updates position of original plate (it is now on the tempaterature block)
     for i in range(column):
         p300multi.pick_up_tip(tiprack_2.columns()[i][0])          
-        p300multi.transfer(175,                                      # Transfer contents of original plate to a new, sterile plate
+        p300multi.transfer(175,                                                # Transfer contents of original plate to a new, sterile plate
                             plate_OG.columns()[i],              
                             plate_new.columns()[i],                      
-                            touch_tip=True,                          # Extra steps ensures minimal loss of cells
+                            touch_tip=True,                                    # Extra steps ensures minimal loss of cells
                             blow_out=True, 
                             blowout_location='destination well',
-                            mix_after=(3,100),                       # Mixing step to ensure homogeneity 
+                            mix_after=(3,100),                                 # Mixing step to ensure homogeneity 
                             new_tip='never')                                   
-        p300multi.return_tip()                                       # Returns tips to tip rack to be reused
+        p300multi.return_tip()                                                 # Returns tips to tip rack to be reused
 
 ## Remove supernatant
 def supernatant(column):
-    p300multi.flow_rate.aspirate = 25 #slowed aspiration rate to avoid disturbing the pellet
-    p300multi.well_bottom_clearance.aspirate = 3 #this value would need to be optimised to avoid aspirating the pellet
+    p300multi.flow_rate.aspirate = 25                                # Slowed aspiration rate to avoid disturbing the pellet
+    p300multi.well_bottom_clearance.aspirate = 3                     # This value would need to be optimised to avoid aspirating the pellet
     p300multi.flow_rate.dispense = 150
     for i in range(column):
         p300multi.pick_up_tip(tiprack_2.columns()[i][0])  
@@ -234,7 +234,7 @@ def CaCl_addition(column):
                            blow_out=True,
                            blowout_location='destination well',
                            new_tip='never',
-                           mix_after=(7,100)) #Thorough mixing to resuspend the pellet
+                           mix_after=(7,100))                       #Thorough mixing to resuspend the pellet
         p300multi.drop_tip()
 
 ### Protocol
@@ -254,15 +254,15 @@ yeast_DNA(multichannel_column_number)
 temp_mod_2.status
 temp_mod_2.temperature
 
-protocol.pause('Move plate from cold block on 3 to heat block on 9 for 40 minute heat shock')  # User must confirm to continue protocol
+protocol.pause('Move plate from cold block on 3 to heat block on 9 for 40 minute heat shock')       # User must confirm to continue protocol
 protocol.delay(minutes = time_block)
 
-temp_mod_2.deactivate()    # Automatically deactivates after heat shock and protocol continues
+temp_mod_2.deactivate()                                                                             # Automatically deactivates after heat shock and protocol continues
 
 ## 6 - transfer content of 96-well plate to fresh 96-well
 transfer_to_new(multichannel_column_number)
 
-protocol.pause('Centrifuge plate at 2000 rmp for 10 minutes and return to deck position 5')  # User must confirm to continue protocol
+protocol.pause('Centrifuge plate at 2000 rmp for 10 minutes and return to deck position 5')         # User must confirm to continue protocol
 
 ## 7 - remove supernatant
 supernatant(multichannel_column_number)
@@ -285,7 +285,7 @@ else:
     filename = filename + ".py"
 
 ## File writing 
-with open(filename, "w") as new_file:                 # Writes out chosen parameters in new file as comments and defines variables
+with open(filename, "w") as new_file:                                   # Writes out chosen parameters in new file as comments and defines variables
     new_file.write("#Opentrons protocol\n")
     new_file.write("\n")
     new_file.write("### DNA volumes a is set to: " + str(DNA_vol) + "\n")
@@ -303,12 +303,12 @@ with open(filename, "w") as new_file:                 # Writes out chosen parame
     new_file.write("time_block = " + str(time_block) + "\n")
     new_file.write("\n")
     
-    with open("YeastTransformationProtocol_API2.py") as f:    # Copies protocol into new file 
+    with open("YeastTransformationProtocol_API2.py") as f:              # Copies protocol into new file 
         for num, line in enumerate(f, 1):
           if num >= 53 and num <= 274:
             new_file.write(line)
     
     new_file.write("\n")     
-    new_file.write("for line in protocol.commands():\n")   # The customised file in Opentrons_scripts folder is ready to be used on the Opentrons app
+    new_file.write("for line in protocol.commands():\n")                # The customised file in Opentrons_scripts folder is ready to be used on the Opentrons app
     new_file.write("    print(line)\n")  
 
