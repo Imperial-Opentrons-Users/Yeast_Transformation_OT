@@ -126,7 +126,7 @@ def PEG_transfer(column):
 ## Plasmid DNA and water transfer to 96 well plate (with robot comments linking the position of each eppendorf to each well in the plate)
 def DNA_transfer(DNAvolume, H2Ovolume, well):        
     for i in range(well):
-        plate_position = str(plate_OG.wells()[i])     #(have to use block command for more control)
+        plate_position = str(plate_OG.wells()[i])
         plate_well = plate_position.split()[0]
         
         p20single.pick_up_tip()
@@ -135,7 +135,7 @@ def DNA_transfer(DNAvolume, H2Ovolume, well):
             eppendorf_position = str(eppendorfrack_1.wells()[i])
             eppendorf_well = eppendorf_position.split()[0]
             
-            p20single.aspirate(H2Ovolume, water)
+            p20single.aspirate(H2Ovolume, water)                           # Block commands used for more control
             p20single.aspirate(DNAvolume, eppendorfrack_1.wells()[i])
             p20single.blow_out(plate_OG.wells()[i])
             p20single.drop_tip()
@@ -254,16 +254,15 @@ protocol.delay(minutes = time_block)
 
 temp_mod_2.deactivate()    # Automatically deactivates after heat shock and protocol continues
 
-## 6
+## 6 - transfer content of 96-well plate to fresh 96-well
 transfer_to_new(multichannel_column_number)
 
-## 7
 protocol.pause('Centrifuge plate at 2000 rmp for 10 minutes and return to deck position 5')  # User must confirm to continue protocol
 
-## 8
+## 7 - remove supernatant
 supernatant(multichannel_column_number)
 
-## 9 - add calcium chloride to make cells competent  
+## 8 - add calcium chloride to make cells competent  
 CaCl_addition(multichannel_column_number)
 
 protocol.comment('Protocol complete!')
@@ -301,7 +300,7 @@ with open(filename, "w") as new_file:                 # Writes out chosen parame
     
     with open("YeastTransformationProtocol_API2.py") as f:    # Copies protocol into new file 
         for num, line in enumerate(f, 1):
-          if num >= 49 and num <= 272:
+          if num >= 49 and num <= 271:
             new_file.write(line)
     
     new_file.write("\n")     
