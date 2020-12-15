@@ -71,7 +71,7 @@ The reservoir wells should contain:
 | A2  | LiOAc  |  1.8 ml  |
 | A2  | SSD  |  475 µl  |
 | A4  | 50% PEG-3350 |  11.5 ml  |
-| A6  | Calcium chloride  |   19.5 ml |
+| A6  | CaCl<sub>2</sub>  |   19.5 ml |
 | A8  | Yeast cells  |  3.2 ml  |
 | A9  | Water  |  20 ml  |
 | A12  | Waste  |    |
@@ -90,7 +90,7 @@ Automated protocol
 7) Opentron transfers cells to clean 96 well plate 
 8) User centrifuges plate and returns to deck
 9) Supernatant is removed
-10) Cells are mixed with 200 µl calcium chloride
+10) Cells are mixed with 200 µl CaCl<sub>2</sub>
 11) Plate can be removed for incubation and plating
 
 
