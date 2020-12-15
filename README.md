@@ -56,15 +56,6 @@ You can now run this in the Opentrons app!
 
 Creating a separate file for your experiment helps to protect the original script from user-specific changes. 
 
-Further help
--------------------
-
-Follow the link to watch a detailed demonstration of how to download and implement this code.
-
-<a href="https://www.youtube.com/watch?v=-7qC8O_KkY4&fbclid=IwAR1QjnBIzrgfqfQzKYRwSYfbc3X5xhVzdcxxi2epXfTBxlpMocNPirMvFhw
-" target="_blank"><img src="https://i.imgur.com/vkhl5gs.png" 
-alt="Opentrons Yeast Transformation Protocol Walkthrough" width="300" height="240" border="10" /></a>
-
 
 Opentrons set up
 -------------------
@@ -101,3 +92,17 @@ Automated protocol
 9) Supernatant is removed
 10) Cells are mixed with 200 µl calcium chloride
 11) Plate can be removed for incubation and plating
+
+
+
+
+Further help
+-------------------
+
+Follow the link to watch a detailed demonstration of how to download and implement this code.
+
+<a href="https://www.youtube.com/watch?v=-7qC8O_KkY4&fbclid=IwAR1QjnBIzrgfqfQzKYRwSYfbc3X5xhVzdcxxi2epXfTBxlpMocNPirMvFhw
+" target="_blank"><img src="https://i.imgur.com/vkhl5gs.png" 
+alt="Opentrons Yeast Transformation Protocol Walkthrough" width="300" height="240" border="10" /></a>
+
+
