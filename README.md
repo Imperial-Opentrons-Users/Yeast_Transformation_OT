@@ -1,6 +1,6 @@
 # Yeast Transformation Protocol
 
-| Reagents (For one sample)  | Opentrons Equipment |
+| Reagents (Volumes for one sample)  | Opentrons Equipment |
 |:-------------: | :-------------: |
 | 1M Lithium acetate (18 µl) | 2x 96-well plates  |
 | 10mg/ml Salmon sperm DNA (5 µl)  | 2x Temperature modules (GEN 2)  |
