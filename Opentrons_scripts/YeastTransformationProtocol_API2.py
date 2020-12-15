@@ -47,6 +47,7 @@ time_block = int(input("Please enter the time for heat shock (recommend 40) (min
 
 ########################### OUTPUT FILE STARTS HERE ###################################
 ### Set-up
+## Initialisation
 from opentrons import simulate
 metadata = {'apiLevel': '2.8'}
 protocol = simulate.get_protocol_api('2.8')
@@ -300,7 +301,7 @@ with open(filename, "w") as new_file:                 # Writes out chosen parame
     
     with open("YeastTransformationProtocol_API2.py") as f:    # Copies protocol into new file 
         for num, line in enumerate(f, 1):
-          if num >= 49 and num <= 271:
+          if num >= 49 and num <= 272:
             new_file.write(line)
     
     new_file.write("\n")     
