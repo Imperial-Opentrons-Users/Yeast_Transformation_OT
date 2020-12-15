@@ -63,7 +63,7 @@ Follow the link to watch a detailed demonstration of how to download and impleme
 
 <a href="https://www.youtube.com/watch?v=-7qC8O_KkY4&fbclid=IwAR1QjnBIzrgfqfQzKYRwSYfbc3X5xhVzdcxxi2epXfTBxlpMocNPirMvFhw
 " target="_blank"><img src="https://i.imgur.com/vkhl5gs.png" 
-alt="Opentrons Yeast Transformation Protocol Walkthrough" width="240" height="180" border="10" /></a>
+alt="Opentrons Yeast Transformation Protocol Walkthrough" width="300" height="240" border="10" /></a>
 
 
 Opentrons set up
