@@ -234,7 +234,7 @@ def CaCl_addition(column):
                            blow_out=True,
                            blowout_location='destination well',
                            new_tip='never',
-                           mix_after=(7,100))                       #Thorough mixing to resuspend the pellet
+                           mix_after=(7,100))                       # Thorough mixing to resuspend the pellet
         p300multi.drop_tip()
 
 ### Protocol
