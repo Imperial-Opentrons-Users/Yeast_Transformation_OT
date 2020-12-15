@@ -63,6 +63,8 @@ Follow the link to watch a detailed demonstration of how to download and impleme
 
 https://www.youtube.com/watch?v=-7qC8O_KkY4&fbclid=IwAR1L49QSFspqv5ncrnHhUJSvyippbG5xk71tXlP7UXx7C4ILsos51kv6wh0
 
+![Opentrons Yeast Transformation Protocol Walkthrough](https://i.imgur.com/vkhl5gs.png)(https://www.youtube.com/watch?v=-7qC8O_KkY4&fbclid=IwAR1QjnBIzrgfqfQzKYRwSYfbc3X5xhVzdcxxi2epXfTBxlpMocNPirMvFhw) 
+
 Opentrons set up
 -------------------
 
