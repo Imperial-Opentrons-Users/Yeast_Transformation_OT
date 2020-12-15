@@ -69,14 +69,18 @@ Opentrons set up
 Please set up your Opentrons as shown in the image above. Place a 96 well plate onto the cold block.
 
 The reservoir wells should contain:
-- A2 &#8594; Lithium acetate (1.8 ml) and salmon sperm DNA (475 µl)
-- A4 &#8594; PEG (11.5 ml)
-- A6 &#8594; Calcium chloride (19.5 ml)
-- A8 &#8594; Yeast cells at appropriate OD (3.2 ml)
-- A9 &#8594; Water (20 ml)
-- A12 &#8594; Waste well
 
-(Can adjust volumes for number of samples you are transforming)
+| Reservoir Well| Reagent | Volume |
+| :-------------: | :-------------: | :-------------: |
+| A2  | Lithium acetate  |  1.8 ml  |
+| A2  | Salmon sperm DNA  |  475 µl  |
+| A4  | 50% PEG-3350 |  11.5 ml  |
+| A6  | Calcium chloride  |   19.5 ml |
+| A8  | Yeast cells  |  3.2 ml  |
+| A9  | Water  |  20 ml  |
+| A12  | Waste  |    |
+
+You Can adjust these volumes for number of samples you are transforming)
 
 Automated protocol
 -------------------
