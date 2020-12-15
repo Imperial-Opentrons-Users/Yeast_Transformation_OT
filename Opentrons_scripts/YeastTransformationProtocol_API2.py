@@ -5,7 +5,7 @@
 # User input
 DNA_vol = int(input("Please enter the plasmid DNA volume per transformation (max 10 µL) (µL): "))
 if DNA_vol>10:
-    raise Exception("Error: Cannot add more than 10 µL of plasmid DNA. Please try again")
+    raise Exception("Error: Cannot add more than 10 µL of plasmid DNA")
     
 # H20 changes accordingly with the DNA volume 
 H2O_vol = 10 - DNA_vol
@@ -13,8 +13,8 @@ H2O_vol = 10 - DNA_vol
 ## Changes to number of columns for p300multi
 # User input
 transformants = int(input("Please enter the number of transformants that will be produced (max 96): "))
-if transformatants>96:
-    raise Exception("Error: Too many transformants. Please try again")
+if transformants>96:
+    raise Exception("Error: Too many transformants")
 
 # Column assignment for transformant number
 if transformants <= 8:
