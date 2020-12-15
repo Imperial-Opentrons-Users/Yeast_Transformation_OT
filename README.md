@@ -99,7 +99,7 @@ Automated protocol
 Further help
 -------------------
 
-Follow the link to watch a detailed demonstration of how to download and implement this code.
+Click the image to watch a detailed demonstration of how to download and implement this code.
 
 <a href="https://www.youtube.com/watch?v=-7qC8O_KkY4&fbclid=IwAR1QjnBIzrgfqfQzKYRwSYfbc3X5xhVzdcxxi2epXfTBxlpMocNPirMvFhw
 " target="_blank"><img src="https://i.imgur.com/vkhl5gs.png" 
