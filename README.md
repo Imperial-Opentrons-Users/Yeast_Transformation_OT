@@ -105,4 +105,7 @@ Click the image to watch a detailed demonstration of how to download and impleme
 " target="_blank"><img src="https://i.imgur.com/vkhl5gs.png" 
 alt="Opentrons Yeast Transformation Protocol Walkthrough" width="340" height="280" border="10" /></a>
 
+Contributors
+-------------------
+Bethan Highley,Eloise O'Connor,Jemima Onime,Kimberley A.Owen,Daniella Pretorius,Emily Tsang
 
